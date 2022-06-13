@@ -17,7 +17,7 @@ const main = async () =>
         const itercount  = core.getInput('itercount',{required: false});
         if (!productpath) {
             console.log("Inside if");
-            imshared = getProductPath(productpath);
+            productpath = getProductPath(productpath);
         }
         var iterations = ' ';
         var args = '';
@@ -27,8 +27,9 @@ const main = async () =>
         if (userargs) {
             args = ' -args ' + userargs + ' ';
         }
+        //Need to change hard coded value for HCl
         if (process.platform == 'linux') {
-            script = 'cd ' + '"' + productpath + '/jdk/jre/bin/"' + '\n' + './java -jar "' + productpath + '/FunctionalTester/bin/_prop_task_ui_product_jar_name_.jar"'
+            script = 'cd ' + '"' + productpath + '/jdk/jre/bin/"' + '\n' + './java -jar "' + productpath + '/FunctionalTester/bin/hcl_ft.jar"'
             + ' -datastore ' + projectdir
             + ' -playback ' + suite
             + ' \"-rt.log_format\" ' + logformat
@@ -37,7 +38,7 @@ const main = async () =>
             + args;
         }
         else if (process.platform == 'win32') {
-            script = 'cd ' + '"' + productpath + '\\jdk\\jre\\bin\\"' + '\n' + 'java.exe -jar "' + productpath + '\\FunctionalTester\\bin\\_prop_task_ui_product_jar_name_.jar"'
+            script = 'cd ' + '"' + productpath + '\\jdk\\jre\\bin\\"' + '\n' + 'java.exe -jar "' + productpath + '\\FunctionalTester\\bin\\hcl_ft.jar"'
             + ' -datastore ' + projectdir
             + ' -playback ' + suite
             + ' \"-rt.log_format\" ' + logformat
