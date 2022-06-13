@@ -5,7 +5,7 @@ inputs:
     description: 'productpath'
     required: true
   projectdir:
-    description: 'The fully qualified path to _prop_task_ui_productName_ project directory. Use '\\\\' or '/' as the file separator. This path must exist on the agent.'
+    description: 'The fully qualified path to _prop_task_ui_productName_ project directory.'
     required: true
   suite:
     description: 'Name of the script to be executed without the extension. For eg., Script1 or TestFolder.Script1 in case Script1 is in a folder named TestFolder.'
