@@ -1,0 +1,24 @@
+name: 'HOT-UI-FT Action'
+description: 'HOT-UI-FT Action'
+inputs:
+  productpath:
+    description: 'productpath'
+    required: true
+  projectdir:
+    description: 'The fully qualified path to _prop_task_ui_productName_ project directory. Use '\\\\' or '/' as the file separator. This path must exist on the agent.'
+    required: true
+  suite:
+    description: 'Name of the script to be executed without the extension. For eg., Script1 or TestFolder.Script1 in case Script1 is in a folder named TestFolder.'
+    required: true
+  logformat:
+    description: 'The format of the script logs, For Example XML, HTML'
+    required: true
+  userargs:
+    description: 'Additional playback arguments, if any.'
+    required: false
+  itercount:
+    description: 'The number of Dataset iterations to be run.'
+    required: false      
+runs:
+  using: 'node16'
+  main: 'index.js'
