@@ -9,13 +9,16 @@ const main = async () =>
 {
 
     try{
-        const productpath = core.getInput('productpath',{required: true});
+        var productpath = core.getInput('productpath',{required: false});
         const projectdir = core.getInput('projectdir',{required: true});
         const suite  = core.getInput('suite',{required: true});
         const logformat  = core.getInput('logformat',{required: true});
         const userargs  = core.getInput('userargs',{required: false});
         const itercount  = core.getInput('itercount',{required: false});
-
+        if (!productpath) {
+            console.log("Inside if");
+            imshared = getProductPath(productpath);
+        }
         var iterations = ' ';
         var args = '';
         if (itercount) {
@@ -117,3 +120,30 @@ const main = async () =>
            }
 }
 main();
+function getProductPath() {
+    var productPathVal = process.env.TEST_WORKBENCH_HOME;
+    var isValid = isValidEnvVar(productPathVal);
+    if (isValid) {
+        var stats = fs.statSync(productPathVal);
+        isValid = stats.isDirectory();
+    }
+
+    if (!isValid) {
+        throw new Error("Could not find a valid TEST_WORKBENCH_HOME environment variable pointing to installation directory.");
+    }
+    return productPathVal;
+}
+function isValidEnvVar(productPathVal) {
+    var valid = true;
+    if (productPathVal == null)
+        valid = false;
+
+    else {
+        productPathVal = productPathVal.toLowerCase();
+        if (productPathVal.includes("*") || productPathVal.includes("?") ||
+            productPathVal.startsWith("del ") || productPathVal.startsWith("rm "))
+            valid = false;
+    }
+
+    return valid;
+}
