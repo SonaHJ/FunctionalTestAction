@@ -5,7 +5,7 @@ This action enables you to run HCL OneTest UI tests.
 ## How this works
 You can use the Traditional UI Action that enables you to select any type of test created in HCL OneTest™ UI that you can add to the job in the GitHub action.
 
-## Pre requesits
+## Pre requisites
 
 1. Create a github repository
 2. Create a folder named ".github" in the root of the repository
