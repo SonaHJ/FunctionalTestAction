@@ -27,14 +27,9 @@ jobs:
          - name: UI Action
            uses: SonaHJ/UIAction@UI_Release
           with:
-            serverUrl: https://master-hcl.tp-k8s.nonprod.hclpnp.com/
-            offlineToken: **********
-            teamspace: Initial Team Space
-            project: A_P1
-            branch: master
-            repository: {repourl}
-            filepath: {test_filepath}
-            environment:
+            projectdir: C:\WorkSpace_UI\UI
+            suite: Script1
+            logformat: Default
 ```
 7. Replace the example input values with your details.
 8. Push it into the main branch

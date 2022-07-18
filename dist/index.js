@@ -8879,16 +8879,13 @@ const main = async () =>
 {
 
     try{
-        var productpath = core.getInput('productpath',{required: false});
+        const productpath = getProductPath();
         const projectdir = core.getInput('projectdir',{required: true});
         const suite  = core.getInput('suite',{required: true});
         const logformat  = core.getInput('logformat',{required: true});
         const userargs  = core.getInput('userargs',{required: false});
         const itercount  = core.getInput('itercount',{required: false});
-        if (!productpath) {
-            console.log("Inside if");
-            productpath = getProductPath(productpath);
-        }
+        
         var iterations = ' ';
         var args = '';
         if (itercount) {
