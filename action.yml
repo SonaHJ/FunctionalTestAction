@@ -1,5 +1,5 @@
-name: 'HOT-UI-FT Action'
-description: 'HOT-UI-FT Action'
+name: 'HCL OneTest UI'
+description: 'HCL OneTest UI'
 inputs:
   productpath:
     description: 'productpath'
