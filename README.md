@@ -1,4 +1,4 @@
-## Traditional UI Action
+## HCL OneTest UI
 
 This action enables you to run HCL OneTest UI tests.
 
@@ -14,7 +14,7 @@ You can use the Traditional UI Action that enables you to select any type of tes
 ## Example usage
 
 ```yaml
-name: UI Action
+name: HCL OneTest UI
 
 on: workflow_dispatch
 
@@ -22,9 +22,9 @@ jobs:
 
     RPT-Action:
         runs-on: self-hosted
-        name: Traditional UI Test
+        name: HCL OneTest UI
         steps:
-         - name: UI Action
+         - name: HCL OneTest UI
            uses: SonaHJ/UIAction@UI_Release
           with:
             projectdir: C:\WorkSpace_UI\UI
