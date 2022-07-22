@@ -45,7 +45,7 @@ To configure agent:
 
 ### `projectdir`
 
-Fully qualified path to the HCL OneTest UI project directory.
+**Required** Fully qualified path to the HCL OneTest UI project directory.
 
 ### `suite`
 
