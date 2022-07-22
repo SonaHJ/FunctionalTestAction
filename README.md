@@ -21,7 +21,7 @@ on:
         inputs:
             projectdir:
                 description: 'Project Directory'
-                required: false
+                required: true
             suite:
                 description: 'Test Suite Name'
                 required: true
