@@ -41,8 +41,8 @@ jobs:
         runs-on: self-hosted
         name: HCL OneTest UI
         steps:
-         - name: Execute Test
-           uses: SonaHJ/TraditionalUIAction@main
+         - name: HCL OneTest UI
+           uses: SonaHJ/TraditionalUIAction@HCLOneTestUI_02
            with:
             projectdir: '${{ github.event.inputs.projectdir }}'
             suite: '${{ github.event.inputs.suite }}'
