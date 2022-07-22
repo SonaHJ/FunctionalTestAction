@@ -1,9 +1,6 @@
 name: 'HCL OneTest UI'
 description: 'HCL OneTest UI'
 inputs:
-  productpath:
-    description: 'productpath'
-    required: true
   projectdir:
     description: 'The fully qualified path to _prop_task_ui_productName_ project directory.'
     required: true
@@ -12,7 +9,7 @@ inputs:
     required: true
   logformat:
     description: 'The format of the script logs, For Example XML, HTML'
-    required: true
+    required: false
   userargs:
     description: 'Additional playback arguments, if any.'
     required: false
