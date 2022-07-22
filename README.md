@@ -16,20 +16,40 @@ You can use the Traditional UI Action that enables you to select any type of tes
 ```yaml
 name: HCL OneTest UI
 
-on: workflow_dispatch
+on:
+    workflow_dispatch:
+        inputs:
+            projectdir:
+                description: 'Project Directory'
+                required: false
+            suite:
+                description: 'Test Suite Name'
+                required: true
+            logformat:
+                description: 'Log Format'
+                required: false
+            userargs:
+                description: 'User Arguments'
+                required: false
+            itercount:
+                description: 'Iteration Count'
+                required: false
 
 jobs:
 
-    RPT-Action:
+    UI-Action:
         runs-on: self-hosted
         name: HCL OneTest UI
         steps:
-         - name: HCL OneTest UI
-           uses: SonaHJ/UIAction@UI_Release
-          with:
-            projectdir: C:\WorkSpace_UI\UI
-            suite: Script1
-            logformat: Default
+         - name: Execute Test
+           uses: SonaHJ/TraditionalUIAction@main
+           with:
+            projectdir: '${{ github.event.inputs.projectdir }}'
+            suite: '${{ github.event.inputs.suite }}'
+            logformat: '${{ github.event.inputs.logformat }}'
+            userargs: '${{ github.event.inputs.userargs }}'
+            itercount: '${{ github.event.inputs.itercount }}'
+
 ```
 7. Replace the example input values with your details.
 8. Push it into the main branch
