@@ -3,9 +3,6 @@ name: WebUI Action
 on:
     workflow_dispatch:
         inputs:
-            productpath:
-                description: 'Product Path'
-                required: false
             projectdir:
                 description: 'Project Directory'
                 required: false
@@ -25,7 +22,6 @@ jobs:
          - name: Execute Test
            uses: SonaHJ/TraditionalUIAction@main
            with:
-            productpath: '${{ github.event.inputs.productpath }}'
             projectdir: '${{ github.event.inputs.projectdir }}'
             suite: '${{ github.event.inputs.suite }}'
             logformat: '${{ github.event.inputs.logformat }}'
