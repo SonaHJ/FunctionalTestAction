@@ -17,19 +17,19 @@ name: HCL OneTest UI
 on:
     workflow_dispatch:
         inputs:
-            projectdir:
+            projectDir:
                 description: 'Project Directory'
                 required: true
             suite:
                 description: 'Test Suite Name'
                 required: true
-            logformat:
+            logFormat:
                 description: 'Log Format'
                 required: false
-            userargs:
+            userArgs:
                 description: 'User Arguments'
                 required: false
-            itercount:
+            iterCount:
                 description: 'Iteration Count'
                 required: false
 
@@ -39,14 +39,14 @@ jobs:
         runs-on: self-hosted
         name: HCL OneTest UI
         steps:
-         - name: HCL OneTest UI
-           uses: SonaHJ/FunctionalTestAction@HCLOneTestUI_02
+         - name: Execute Test
+           uses: SonaHJ/TraditionalUIAction@main
            with:
-            projectdir: '${{ github.event.inputs.projectdir }}'
+            projectDir: '${{ github.event.inputs.projectDir }}'
             suite: '${{ github.event.inputs.suite }}'
-            logformat: '${{ github.event.inputs.logformat }}'
-            userargs: '${{ github.event.inputs.userargs }}'
-            itercount: '${{ github.event.inputs.itercount }}'
+            logFormat: '${{ github.event.inputs.logFormat }}'
+            userArgs: '${{ github.event.inputs.userArgs }}'
+            iterCount: '${{ github.event.inputs.iterCount }}'
 
 ```
 5. Push it into the main branch
@@ -60,7 +60,7 @@ jobs:
 
 ## Inputs
 
-### `projectdir`
+### `projectDir`
 
 **Required** Fully qualified path to the HCL OneTest UI project directory.
 
@@ -68,13 +68,13 @@ jobs:
 
 **Required** Name of the script to be executed without the extension. For eg., Script1 or TestFolder.Script1 in case Script1 is in a folder named TestFolder.
 
-### `logformat`
+### `logFormat`
 
 **Optional** Format of script execution logs. Choose from Default, none, json, xml, html, text, and TPTP.
 
-### `userargs`
+### `userArgs`
 
 **Optional** Additional playback arguments, if any. If there are multiple arguments, you must enclose each argument within double quotes and separate the arguments by providing a space between them.
 
-### `itercount`
+### `iterCount`
 **Optional** Number of dataset iterations to be run.

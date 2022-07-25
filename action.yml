@@ -1,19 +1,19 @@
 name: 'HCL OneTest UI'
 description: 'HCL OneTest UI'
 inputs:
-  projectdir:
+  projectDir:
     description: 'The fully qualified path to _prop_task_ui_productName_ project directory.'
     required: true
   suite:
     description: 'Name of the script to be executed without the extension. For eg., Script1 or TestFolder.Script1 in case Script1 is in a folder named TestFolder.'
     required: true
-  logformat:
+  logFormat:
     description: 'The format of the script logs, For Example XML, HTML'
     required: false
-  userargs:
+  userArgs:
     description: 'Additional playback arguments, if any.'
     required: false
-  itercount:
+  iterCount:
     description: 'The number of Dataset iterations to be run.'
     required: false      
 runs:
