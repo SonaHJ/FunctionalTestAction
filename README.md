@@ -40,7 +40,7 @@ jobs:
         name: HCL OneTest UI
         steps:
          - name: HCL OneTest UI
-           uses: SonaHJ/TraditionalUIAction@HCLOneTestUI_02
+           uses: SonaHJ/FunctionalTestAction@HCLOneTestUI_02
            with:
             projectdir: '${{ github.event.inputs.projectdir }}'
             suite: '${{ github.event.inputs.suite }}'
