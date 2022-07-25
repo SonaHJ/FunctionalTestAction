@@ -6,8 +6,8 @@ This action enables you to run HCL OneTest UI tests.
 
 1. Create a github repository
 2. Create a folder named ".github/workflows" in the root of the repository
-3. Create a .yml file with any name, inside the "workflow" folder
-4. Then you need to add code to yml file as detailed in the following example.
+3. Create a .yml file with any name inside the ".github/workflows" folder
+4. Then you need to code thta yml file as mentioned in the following example.
 
 ## Example usage
 
@@ -56,7 +56,8 @@ jobs:
     3. Click Create self-hosted runner, follow the download and configure instruction
 
 7. Go to the Actions section in the repository and select the workflow.
-8. Click the Run workflow dropdown and the list of input boxes get displayed.
+8. Click the Run workflow dropdown and the list of input text boxes are displayed.
+9. After entering the input values click on run workflow button
 
 ## Inputs
 
