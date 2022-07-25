@@ -2,15 +2,13 @@
 
 This action enables you to run HCL OneTest UI tests.
 
-## How this works
-You can use the Traditional UI Action that enables you to select any type of test created in HCL OneTest™ UI that you can add to the job in the GitHub action.
-
 ## Pre requisites
 
 1. Create a github repository
-2. Create a folder named ".github" in the root of the repository
-3. Create a folder named "workflows" inside the ".github" folder.
-5. Create a .yml file with any name , inside the "workflow" folder and you need to code as following example in that yml file
+2. Create a folder named ".github/workflows" in the root of the repository
+3. Create a .yml file with any name, inside the "workflow" folder
+4. Then you need to add code to yml file as detailed in the following example.
+
 ## Example usage
 
 ```yaml
@@ -51,15 +49,14 @@ jobs:
             itercount: '${{ github.event.inputs.itercount }}'
 
 ```
-7. Replace the example input values with your details.
-8. Push it into the main branch
-9. Go to the Actions section in the repository and select the workflow.
-10. Click the Run workflow dropdown and the list of input boxes get displayed.
+5. Push it into the main branch
+6. To configure agent:
+    1. Go to settings (Repo).
+    2. Select action -> runner.
+    3. Click Create self-hosted runner, follow the download and configure instruction
 
-To configure agent:
-1. Go to settings (Repo).
-2. Select action -> runner.
-3. Click Create self-hosted runner, follow the download and configure instruction
+7. Go to the Actions section in the repository and select the workflow.
+8. Click the Run workflow dropdown and the list of input boxes get displayed.
 
 ## Inputs
 
@@ -73,11 +70,11 @@ To configure agent:
 
 ### `logformat`
 
-Format of script execution logs. Choose from Default, none, json, xml, html, text, and TPTP.
+**Optional** Format of script execution logs. Choose from Default, none, json, xml, html, text, and TPTP.
 
 ### `userargs`
 
-Additional playback arguments, if any. If there are multiple arguments, you must enclose each argument within double quotes and separate the arguments by providing a space between them.
+**Optional** Additional playback arguments, if any. If there are multiple arguments, you must enclose each argument within double quotes and separate the arguments by providing a space between them.
 
 ### `itercount`
-Number of dataset iterations to be run.
+**Optional** Number of dataset iterations to be run.
