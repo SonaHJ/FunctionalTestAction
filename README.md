@@ -1,6 +1,6 @@
 ## HCL OneTest UI
 
-This action enables you to run HCL OneTest UI tests.
+This action enables you to run HCL OneTest UI tests example.
 
 ## Pre requisites
 
